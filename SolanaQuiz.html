@@ -1,0 +1,399 @@
+
+<!doctype html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+   <title>Solana IQ></title>
+<style>
+table {
+    opacity:0.0;
+}
+body {
+  background-color: lightblue;
+  color: black;
+}
+#myProgress {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  background-color: #ddd;
+}
+
+#myBar {
+  background-color: #4CAF50;
+  width: 10px;
+  height: 30px;
+  position: absolute;
+}
+</style> 
+<SCRIPT language=JavaScript> 
+<!--
+var running = false
+var endTime = null
+var timerID = null
+ 
+function startTimer() {
+        running = true
+        now = new Date()
+        now = now.getTime()
+        endTime = now + (180000)
+        showCountDown()
+}
+ 
+function showCountDown() {
+        var now = new Date()
+        now = now.getTime()
+        if (endTime - now <= 0) {
+                stopTimer()
+	        } else {
+                var delta = new Date(endTime - now)
+                var theMin = delta.getMinutes()
+                var theSec = delta.getSeconds()
+                var theTime = theMin
+                theTime += ((theSec < 10) ? ":0" : ":") + theSec
+	window.status = "Time left: "+theTime
+                if (running) {
+                        timerID = setTimeout("showCountDown()",1000)
+                }
+        }
+}
+ 
+function stopTimer() {
+ document.getElementById("questions").style.opacity = 1;
+	r(iq);
+ 
+}
+ 
+//-->
+</SCRIPT>
+ 
+ 
+<SCRIPT language=JavaScript> 
+<!-- 
+function r(iq) {
+with (Math) {
+var res=0;
+ 
+for (i=0;i<iq.elements.length;i++)
+  if ((iq.elements[i].type=="radio") &&
+    (iq.elements[i].value=="1") &&
+    (iq.elements[i].checked))
+    res = res + 3;
+ 
+for (i=0;i<iq.elements.length;i++)
+  if ((iq.elements[i].type=="radio") &&
+    (iq.elements[i].value!="1") &&
+    (iq.elements[i].checked))
+    res--;
+ 
+ 
+if (iq.q1.value=="Bank state") res = res + 18;
+ 
+if (iq.q2.value=="Bootstrap validator") res = res + 18;
+ 
+if (iq.q3.value=="Cluster") res = res + 18;
+ 
+if (iq.q4.value=="light client") res = res + 18;
+ 
+if (iq.q5.value=="Account") res = res + 18;
+ 
+if (iq.q6.value=="Lamport") res = res + 18;
+ 
+if (iq.q7.value=="Drone") res = res + 18;
+ 
+if (iq.q8.value=="CBC block") res = res + 18;
+ 
+if (iq.q9.value=="Proof of History") res = res + 18;
+
+if (iq.q10.value=="Genesis config") res = res + 18;
+
+iq.qr.value = res;
+
+ 
+}
+}
+ // -->
+</script>
+<script>
+function move() {
+  document.getElementById("questions").style.opacity = 1;
+
+  var elem = document.getElementById("myBar");   
+  var width = 0;
+  var id = setInterval(frame, 1800);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+      alert("times UP")
+    }
+    else if (stopTimer()) {
+        clearInterval(id);
+    }
+    else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
+</script>
+</head>
+ 
+<!--
+<body background="imatges/fons.jpg" text="#000000" link="#000000"
+vlink="#AA0000" onLoad="timerID=setTimeout('r(iq)',1200000)">
+-->
+ 
+<body bgcolor="#F0F0F0" text="#FFFFFF" link="#000000" vlink="#CC0000" onLoad=startTimer()>
+<br>
+ 
+
+<tr>
+ 
+<td ALIGN=CENTER WIDTH="60%">
+<center><font face="Arial"><font size=+2>Solana QUIZ</font></font>
+<br><font face="Arial"><font size=+1>Measure your SOLANA IQ&nbsp;</font></font></center>
+</td>
+
+
+<p>Timer</p>
+
+<div id="myProgress">
+  <div id="myBar"></div>
+</div> 
+
+<div align="center">
+  <center>
+ 
+
+<tr>
+<td>&nbsp;
+<center>
+<br><b><font size=+0>Scores will be out of 180.</font></b>
+<br>
+<p><font size=+0><b>&nbsp;</b> <b>You have 3 mins to complete the test, GOOD LUCK!</b></font>
+<br><br>
+<button onclick="move()">Start</button> 
+</center>
+<form name="iq">
+
+
+
+<table id="questions" BORDER=0 WIDTH="40%" >
+<tr>
+<td WIDTH="60">1)</td>
+<td ALIGN=RIGHT WIDTH="60%"><b><font color="#000000"><font size=-1 >The result of interpreting all programs on the ledger at a given tick height. It includes at least the set of all accounts holding nonzero native tokens:
+  <select name="q1">
+    <option value="Default">Default</option>
+    <option value="Account">Account</option>
+    <option value="Bank state">Bank state</option>
+    <option value="Bootstrap validator">Bootstrap validator</option>
+    <option value="CBC block">CBC block</option>
+    <option value="Cluster">Cluster</option>
+    <option value="Drone">Drone</option>
+    <option value="Genesis config">Genesis config</option>
+    <option value="Lamport">Lamport</option>
+    <option value="light client">light client</option>
+    <option value="Proof of History">Proof of History</option>
+  </select>
+</font></font></b></td>
+
+</tr>
+<tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/>
+<tr>
+<td WIDTH="40">2)</td>
+ 
+<td ALIGN=RIGHT WIDTH="59%"><b><font color="#000000"><font size=-1>The first validator to produce a block: &nbsp;
+<select name="q2">
+    <option value="Default">Default</option>
+    <option value="Account">Account</option>
+    <option value="Bank state">Bank state</option>
+    <option value="Bootstrap validator">Bootstrap validator</option>
+    <option value="CBC block">CBC block</option>
+    <option value="Cluster">Cluster</option>
+    <option value="Drone">Drone</option>
+    <option value="Genesis config">Genesis config</option>
+    <option value="Lamport">Lamport</option>
+    <option value="light client">light client</option>
+    <option value="Proof of History">Proof of History</option>
+  </select>
+</font></font></b></td>
+</tr>
+<tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/>
+<tr>
+<td WIDTH="40">3)</td>
+ 
+<td ALIGN=RIGHT WIDTH="59%"><b><font color="#000000"><font size=-1>A set of validators maintaining a single ledger:&nbsp;
+<select name="q3">
+    <option value="Default">Default</option>
+    <option value="Account">Account</option>
+    <option value="Bank state">Bank state</option>
+    <option value="Bootstrap validator">Bootstrap validator</option>
+    <option value="CBC block">CBC block</option>
+    <option value="Cluster">Cluster</option>
+    <option value="Drone">Drone</option>
+    <option value="Genesis config">Genesis config</option>
+    <option value="Lamport">Lamport</option>
+    <option value="light client">light client</option>
+    <option value="Proof of History">Proof of History</option>
+  </select>
+</font></font></b></td>
+</tr>
+<tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/> 
+<tr>
+<td WIDTH="40">4)</td>
+ 
+<td ALIGN=RIGHT WIDTH="59%"><b><font color="#000000"><font size=-1>A type of client that can verify it's pointing to a valid cluster. It performs more ledger verification than a thin client and less than a validator:
+<select name="q4">
+    <option value="Default">Default</option>
+    <option value="Account">Account</option>
+    <option value="Bank state">Bank state</option>
+    <option value="Bootstrap validator">Bootstrap validator</option>
+    <option value="CBC block">CBC block</option>
+    <option value="Cluster">Cluster</option>
+    <option value="Drone">Drone</option>
+    <option value="Genesis config">Genesis config</option>
+    <option value="Lamport">Lamport</option>
+    <option value="light client">light client</option>
+    <option value="Proof of History">Proof of History</option>
+  </select>
+</font></font></b></td>
+</tr>
+ <tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/>
+<tr>
+<td WIDTH="40">5)</td>
+ 
+<td ALIGN=RIGHT WIDTH="59%"><b><font color="#000000"><font size=-1>A persistent file addressed by public key and with lamports tracking its lifetime:
+<select name="q5">
+    <option value="Default">Default</option>
+    <option value="Account">Account</option>
+    <option value="Bank state">Bank state</option>
+    <option value="Bootstrap validator">Bootstrap validator</option>
+    <option value="CBC block">CBC block</option>
+    <option value="Cluster">Cluster</option>
+    <option value="Drone">Drone</option>
+    <option value="Genesis config">Genesis config</option>
+    <option value="Lamport">Lamport</option>
+    <option value="light client">light client</option>
+    <option value="Proof of History">Proof of History</option>
+  </select>
+</font></font></b></td>
+</tr>
+<tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/> 
+<tr>
+<td WIDTH="40">6)</td>
+ 
+<td ALIGN=RIGHT WIDTH="59%"><b><font color="#000000"><font size=-1>A fractional native token with the value of 0.000000001 sol:
+<select name="q6">
+    <option value="Default">Default</option>
+    <option value="Account">Account</option>
+    <option value="Bank state">Bank state</option>
+    <option value="Bootstrap validator">Bootstrap validator</option>
+    <option value="CBC block">CBC block</option>
+    <option value="Cluster">Cluster</option>
+    <option value="Drone">Drone</option>
+    <option value="Genesis config">Genesis config</option>
+    <option value="Lamport">Lamport</option>
+    <option value="light client">light client</option>
+    <option value="Proof of History">Proof of History</option>
+  </select>
+</font></font></b></td>
+
+</tr>
+<tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/> 
+<tr>
+<td WIDTH="40">7)</td>
+ 
+<td ALIGN=RIGHT WIDTH="59%"><b><font color="#000000"><font size=-1>An off-chain service that acts as a custodian for a user's private key. It typically serves to validate and sign transactions:
+<select name="q7">
+    <option value="Default">Default</option>
+    <option value="Account">Account</option>
+    <option value="Bank state">Bank state</option>
+    <option value="Bootstrap validator">Bootstrap validator</option>
+    <option value="CBC block">CBC block</option>
+    <option value="Cluster">Cluster</option>
+    <option value="Drone">Drone</option>
+    <option value="Genesis config">Genesis config</option>
+    <option value="Lamport">Lamport</option>
+    <option value="light client">light client</option>
+    <option value="Proof of History">Proof of History</option>
+  </select>
+</font></font></b></td>
+</tr>
+ <tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/>
+<tr>
+<td WIDTH="40">8)</td>
+ 
+<td ALIGN=RIGHT WIDTH="59%"><b><font color="#000000"><font size=-1>Smallest encrypted chunk of ledger, an encrypted ledger segment would be made of many CBC blocks. ledger_segment_size / cbc_block_size to be exact:
+<select name="q8">
+    <option value="Default">Default</option>
+    <option value="Account">Account</option>
+    <option value="Bank state">Bank state</option>
+    <option value="Bootstrap validator">Bootstrap validator</option>
+    <option value="CBC block">CBC block</option>
+    <option value="Cluster">Cluster</option>
+    <option value="Drone">Drone</option>
+    <option value="Genesis config">Genesis config</option>
+    <option value="Lamport">Lamport</option>
+    <option value="light client">light client</option>
+    <option value="Proof of History">Proof of History</option>
+  </select>
+</font></font></b></td>
+</tr>
+<tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/>
+<tr>
+<td WIDTH="40">9)</td>
+ 
+<td ALIGN=RIGHT WIDTH="59%"><b><font color="#000000"><font size=-1>A stack of proofs, each which proves that some data existed before the proof was created and that a precise duration of time passed before the previous proof. Like a VDF, a Proof of History can be verified in less time than it took to produce:&nbsp;
+<select name="q9">
+    <option value="Default">Default</option>
+    <option value="Account">Account</option>
+    <option value="Bank state">Bank state</option>
+    <option value="Bootstrap validator">Bootstrap validator</option>
+    <option value="CBC block">CBC block</option>
+    <option value="Cluster">Cluster</option>
+    <option value="Drone">Drone</option>
+    <option value="Genesis config">Genesis config</option>
+    <option value="Lamport">Lamport</option>
+    <option value="light client">light client</option>
+    <option value="Proof of History">Proof of History</option>
+  </select>
+</font></font></b></td>
+</tr>
+<tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/>
+<tr>
+<td WIDTH="40">10)</td>
+ 
+<td ALIGN=RIGHT WIDTH="59%"><b><font color="#000000"><font size=-1>The configuration file that prepares the ledger for the genesis block:&nbsp;
+<select name="q10">
+    <option value="Default">Default</option>
+    <option value="Account">Account</option>
+    <option value="Bank state">Bank state</option>
+    <option value="Bootstrap validator">Bootstrap validator</option>
+    <option value="CBC block">CBC block</option>
+    <option value="Cluster">Cluster</option>
+    <option value="Drone">Drone</option>
+    <option value="Genesis config">Genesis config</option>
+    <option value="Lamport">Lamport</option>
+    <option value="light client">light client</option>
+    <option value="Proof of History">Proof of History</option>
+  </select>
+</font></font></b></td>
+
+</tr>
+<tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/><tr/>
+</table>
+
+<center>
+<p>
+<button onclick="startTimer()">Reset </button> 
+ <p><b><font size=+0>Your score is&nbsp;<input type="text" size="3" name="qr">points.</font></b>
+<br></form></center>
+</td>
+</tr>
+
+
+
+ 
+</body>
+</html>
